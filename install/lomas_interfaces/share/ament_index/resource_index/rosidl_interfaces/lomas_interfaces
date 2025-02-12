@@ -1,0 +1,4 @@
+msg/MachineCommand.idl
+msg/MachineCommand.msg
+msg/MachineStatus.idl
+msg/MachineStatus.msg
