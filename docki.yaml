@@ -20,6 +20,8 @@ python_dep:
   file: ./requirements.txt
 init_commands:
   - export ROS_DOMAIN_ID=1
+  - colcon build --symlink-install
+  - source install/setup.bash
 # notebook_token: docki
 # notebook_password: docki
 # remote:

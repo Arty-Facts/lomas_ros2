@@ -1,0 +1,8 @@
+numpy
+PyYAML
+setuptools
+empy
+catkin_pkg
+lark
+cython
+opencv-python
