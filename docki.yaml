@@ -17,8 +17,9 @@ system_dep:
   - libglx-mesa0
   - libgl1 
   - ros-jazzy-cv-bridge
+  - python3-opencv
 system_commands:
-  - pip install opencv-python --break-system-packages
+  - pip install "uvicorn[standard]" fastapi websockets --break-system-packages
 init_commands:
   - export ROS_DOMAIN_ID=1
   - source /opt/ros/jazzy/setup.bash
