@@ -14,7 +14,7 @@ class MachineMover(Node):
         self.subscription = self.create_subscription(Image, '/lomas/camera/image', self.image_callback, 10)
         self.bridge = CvBridge()
         self.image_counter = 0
-        os.makedirs('/workspace/captured_images', exist_ok=True)
+        os.makedirs('workspace/captured_images', exist_ok=True)
 
     def move_once(self, x, y, z=0):
         msg = MachineCommand()
@@ -33,7 +33,7 @@ class MachineMover(Node):
 
     def image_callback(self, msg):
         image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-        image_path = f"/workspace/captured_images/image_{self.image_counter:04d}.jpg"
+        image_path = f"workspace/captured_images/image_{self.image_counter:04d}.jpg"
         cv2.imwrite(image_path, image)
         self.image_counter += 1
         self.get_logger().info(f'Saved image: {image_path}')

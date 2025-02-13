@@ -1,8 +1,9 @@
-numpy
+# numpy<2
 PyYAML
 setuptools
 empy
 catkin_pkg
 lark
-cython
 opencv-python
+colcon-common-extensions
+Cython

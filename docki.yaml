@@ -8,26 +8,21 @@
 
 # example:
 # 
-base_image: ros:jazzy-perception
+base_image: ros:jazzy
 # shm_size: 16G # shared memory size
 tag: lomas
 system_dep:
-  - python3
-  - python3-pip
-  - python3-dev
-  - python3-venv
-python_dep:
-  file: ./requirements.txt
+  - python3.pip
+  - libegl1
+  - libglx-mesa0
+  - libgl1 
+  - ros-jazzy-cv-bridge
+system_commands:
+  - pip install opencv-python --break-system-packages
 init_commands:
   - export ROS_DOMAIN_ID=1
-  - colcon build --symlink-install
+  - source /opt/ros/jazzy/setup.bash
+  - colcon build
   - source install/setup.bash
-# notebook_token: docki
-# notebook_password: docki
-# remote:
-#   hosts:
-#     - name: username@host1
-#     - name: username@host2
-#       workspace: /path/to/workspace
-# 
+
 
